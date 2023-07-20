@@ -127,7 +127,6 @@ input[type="checkbox"]:checked:before{
     font-weight: 300;
     font-style: italic;
     text-decoration: line-through;
-    
 }
 
 p{

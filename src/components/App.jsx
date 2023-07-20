@@ -21,23 +21,18 @@ function App (){
         let itemValue = e.target.name;
         
         function setLists (listName, action){
-            if(action === "add"){
-                listName(prevChecked => {return [...prevChecked, itemValue]})
-            }
-            else{
-                listName(prevItems => {return [...prevItems.filter(item => item !== (itemValue))]})
-            }
+            ((action === "add") ? listName(prevChecked => {return [...prevChecked, itemValue]})
+            : listName(prevItems => {return [...prevItems.filter(item => item !== (itemValue))]})
+            );
         }
+
         if(e.target.checked && !checkedItems.includes(itemValue)){
             document.getElementById(itemValue).checked=false;
             setLists(setCheckedItems, "add")
-            checkedItems.map(checkedItem => {return document.getElementById(checkedItem).checked=true})
             setLists(setItems, "remove");
         }else if(!e.target.checked){
             setLists(setCheckedItems, "remove");
             setLists(setItems, "add");
-            document.getElementById(itemValue).checked=true;
-            
         }
     }
 
