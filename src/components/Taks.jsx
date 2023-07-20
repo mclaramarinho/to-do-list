@@ -21,7 +21,7 @@ function Tasks(props){
                 {checkedArr.length > 0 && <p>Done</p>}
                 <div className="left">
                     {checkedArr.length > 0 ? 
-                        (checkedArr.map(checkedItem => {return <ListItem name={checkedItem} value={checkedItem} handler={handler} class="checked-item" />}))
+                        (checkedArr.map(checkedItem => {return <ListItem name={checkedItem} value={checkedItem} handler={handler} check={true} class="checked-item" />}))
                         : <p style={{"textAlign":"center", "color":"crimson"}}>Nothing done yet</p>
                     }
                 </div>

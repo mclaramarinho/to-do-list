@@ -7,7 +7,7 @@ function App (){
     const [items, setItems] = useState([]);
     const [value, setValue] = useState("");
     const [checkedItems, setCheckedItems] = useState([]);
-    
+
     function handleClick (){
         if(!items.includes(value) && value.length>0){
             setItems(prevItems => {return [...prevItems, value]})
@@ -33,10 +33,12 @@ function App (){
             setLists(setCheckedItems, "add")
             checkedItems.map(checkedItem => {return document.getElementById(checkedItem).checked=true})
             setLists(setItems, "remove");
+            checker = true;
         }else if(!e.target.checked){
             setLists(setCheckedItems, "remove");
             setLists(setItems, "add");
             document.getElementById(itemValue).checked=true;
+            
         }
     }
 
