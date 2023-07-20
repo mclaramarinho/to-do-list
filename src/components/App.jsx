@@ -33,7 +33,6 @@ function App (){
             setLists(setCheckedItems, "add")
             checkedItems.map(checkedItem => {return document.getElementById(checkedItem).checked=true})
             setLists(setItems, "remove");
-            checker = true;
         }else if(!e.target.checked){
             setLists(setCheckedItems, "remove");
             setLists(setItems, "add");
