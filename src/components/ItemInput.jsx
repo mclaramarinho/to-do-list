@@ -1,9 +1,11 @@
 import React from "react";
 
 function ItemInput (props){
+    const handler = () => {return props.handler()};
+
     return(
         <div>
-            <input type="text" id="inputBox" value={props.value} onChange={props.changer} onBlur={(e) => {setTimeout(e.target.focus())}} />
+            <input type="text" id="inputBox" onKeyUp={(e) => {(e.key==="Enter") && handler()}} value={props.value} onChange={props.changer} onBlur={(e) => {setTimeout(e.target.focus())}} />
             <button onClick={props.handler}>Enter</button>
         </div>
     )

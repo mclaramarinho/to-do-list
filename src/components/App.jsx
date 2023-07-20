@@ -7,7 +7,7 @@ function App (){
     const [items, setItems] = useState([]);
     const [value, setValue] = useState("");
     const [checkedItems, setCheckedItems] = useState([]);
-
+ 
     function handleClick (){
         if(!items.includes(value) && value.length>0){
             setItems(prevItems => {return [...prevItems, value]})
