@@ -1,7 +1,7 @@
 # To-Do List
 Browser To-Do App made with React and CSS
 
-**Live URL:** [(https://todolist-react-challenge.netlify.app/)]
+**Live URL:** [https://todolist-react-challenge.netlify.app/]
 
 ## SCREENSHOTS
 1. ![image](https://github.com/mclaramarinho/to-do-list-deeploy/assets/119897667/87bb9cc4-80d1-4ecd-88eb-1b46a8d0c881)
