@@ -5,7 +5,7 @@ function ItemInput (props){
 
     return(
         <div>
-            <input type="text" id="inputBox" onKeyUp={(e) => {(e.key==="Enter") && handler()}} value={props.value} onChange={props.changer} /*onBlur={(e) => {setTimeout(e.target.focus())}}*/ />
+            <input type="text" id="inputBox" onKeyUp={(e) => {(e.key==="Enter") && handler()}} value={props.value} onChange={props.changer} />
             <button onClick={props.handler}>Enter</button>
         </div>
     )
