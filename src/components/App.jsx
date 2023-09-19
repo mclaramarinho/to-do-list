@@ -50,7 +50,7 @@ function App (){
         if(e.target.checked && !checkedItems.includes(itemValue)){
             document.getElementById(itemValue).checked=false;
             setLists(setCheckedItems, "add")
-            setLists(setItems, "remove");
+            setLists(setItems, "remove");   
         }else if(!e.target.checked){
             setLists(setCheckedItems, "remove");
             setLists(setItems, "add");            
