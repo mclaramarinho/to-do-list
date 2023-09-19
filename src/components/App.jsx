@@ -26,8 +26,6 @@ function App (){
             }
         }
 
-        
-        console.log(localStorage.getItem("storedCheckedItems"), localStorage.getItem("storedItems"))
         control = true;
     }, [])
     
