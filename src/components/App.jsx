@@ -13,14 +13,21 @@ function App (){
     let control = false;
 
     useEffect(()=>{
-        if(localStorage.getItem("storedItems").length > 0 && localStorage.getItem("storedItems")!=="undefined" && localStorage.getItem("storedItems")!== null){
-            setItems(JSON.parse(localStorage.getItem('storedItems')))
+        if(localStorage.getItem("storedCheckedItems") === null && localStorage.getItem("storedItems") === null){
+            localStorage.setItem("storedItems", []);
+            localStorage.setItem("storedCheckedItems", [])
         }else{
-            localStorage.setItem("storedItems", [])
+            if(localStorage.getItem("storedItems").length > 0){
+                setItems(JSON.parse(localStorage.getItem('storedItems')))
+            }
+            if(localStorage.getItem("storedCheckedItems").length > 0){
+                console.log("working")
+                setCheckedItems(JSON.parse(localStorage.getItem('storedCheckedItems')))
+            }
         }
-        if(localStorage.getItem("storedCheckedItems").length > 0){
-            setCheckedItems(JSON.parse(localStorage.getItem('storedCheckedItems')))
-        }
+
+        
+        console.log(localStorage.getItem("storedCheckedItems"), localStorage.getItem("storedItems"))
         control = true;
     }, [])
     
