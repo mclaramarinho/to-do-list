@@ -13,7 +13,7 @@ function App (){
     let control = false;
 
     useEffect(()=>{
-        if(localStorage.getItem("storedItems").length > 0 && localStorage.getItem("storedItems")!=="undefined"){
+        if(localStorage.getItem("storedItems").length > 0 && localStorage.getItem("storedItems")!=="undefined" && localStorage.getItem("storedItems")!== null){
             setItems(JSON.parse(localStorage.getItem('storedItems')))
         }else{
             localStorage.setItem("storedItems", [])
