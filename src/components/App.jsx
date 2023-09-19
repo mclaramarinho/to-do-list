@@ -1,11 +1,11 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import ItemInput from "./ItemInput";
 import Tasks from "./Taks";
 
 function App (){
 
-
+    
     const [items, setItems] = useState([]);
     const [value, setValue] = useState("");
     const [checkedItems, setCheckedItems] = useState([]);
@@ -13,8 +13,10 @@ function App (){
     let control = false;
 
     useEffect(()=>{
-        if(localStorage.getItem("storedItems").length > 0){
+        if(localStorage.getItem("storedItems").length > 0 && localStorage.getItem("storedItems")!=="undefined"){
             setItems(JSON.parse(localStorage.getItem('storedItems')))
+        }else{
+            localStorage.setItem("storedItems", [])
         }
         if(localStorage.getItem("storedCheckedItems").length > 0){
             setCheckedItems(JSON.parse(localStorage.getItem('storedCheckedItems')))
